@@ -13,7 +13,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration buildProperties="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base.1248442474" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+				<configuration buildProperties="" description="" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base.1248442474" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base.1248442474.1480202452" name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base.2089155925" name="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.toolchain.base">
 							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.target.processor.88835705" name="Processor" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.target.processor"/>
@@ -31,10 +31,16 @@
 							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.createlisting.2135823786" name="Create Extended Listing" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.createlisting"/>
 							<option id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.printsize.205151478" name="Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.option.addtools.printsize"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.platform.base.500259881" isAbstract="false" name="Windows Platform" osList="win32" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.platform.base"/>
-							<builder id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.builder.base.261165290" managedBuildOn="false" name="ARM Sourcery Windows GNU Make builder.Default" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.builder.base"/>
-							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.33525519" name="ARM Sourcery Windows GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base"/>
-							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.2126243443" name="ARM Sourcery Windows GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base"/>
-							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base.412940125" name="ARM Sourcery Windows GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base"/>
+							<builder id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.builder.base.261165290" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="ARM Sourcery Windows GNU Make builder" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.builder.base"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.33525519" name="ARM Sourcery Windows GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.2100284841" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.2126243443" name="ARM Sourcery Windows GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.1694666673" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base.412940125" name="ARM Sourcery Windows GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base.input.1612516196" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.compiler.base.input"/>
+							</tool>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.linker.base.2132104223" name="ARM Sourcery Windows GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.linker.base"/>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.linker.base.1763129343" name="ARM Sourcery Windows GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.cpp.linker.base"/>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.archiver.base.213616217" name="ARM Sourcery Windows GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.archiver.base"/>
@@ -67,4 +73,9 @@
 		<project id="P1.null.982491268" name="P1"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/P1"/>
+		</configuration>
+	</storageModule>
 </cproject>
