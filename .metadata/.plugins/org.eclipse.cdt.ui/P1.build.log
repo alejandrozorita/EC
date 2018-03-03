@@ -1,0 +1,9 @@
+10:06:39 **** Build of configuration Default for project P1 ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/eclipse/jre/bin/client;C:/Program Files/eclipse/jre/bin;C:/Program Files/eclipse/jre/lib/i386;;;C:\Program Files\eclipse;]
+
+10:06:39 Build Finished (took 63ms)
+

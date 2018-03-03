@@ -1,0 +1,27 @@
+   1              	# 1 "../misc.S"
+   1              	
+   0              	
+   0              	
+   0              	
+   2              		.equ COEF1, 3483
+   3              		.equ COEF2, 11718
+   4              		.equ COEF3, 1183
+   5              	
+   6              		.text
+   7              	/* Descomentar e implementar estas funciones
+   8              	
+   9              		.global rgb2gray
+  10              		.global div16384
+  11              	rgb2gray:
+  12              	
+  13              	div16384: 
+  14              	
+  15              	*/
+  16              	
+  17              	  		.end
+DEFINED SYMBOLS
+           ../misc.S:2      *ABS*:00000d9b COEF1
+           ../misc.S:3      *ABS*:00002dc6 COEF2
+           ../misc.S:4      *ABS*:0000049f COEF3
+
+NO UNDEFINED SYMBOLS

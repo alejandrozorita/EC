@@ -27,47 +27,47 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-P1.hex \
+Prueba.hex \
 
 SECONDARY_LIST += \
-P1.lst \
+Prueba.lst \
 
 SECONDARY_SIZE += \
-P1.siz \
+Prueba.siz \
 
 
 # All Target
-all: P1.elf secondary-outputs
+all: Prueba.elf secondary-outputs
 
 # Tool invocations
-P1.elf: $(OBJS) $(USER_OBJS)
+Prueba.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Sourcery Windows GCC C Linker'
-	arm-none-eabi-gcc -T"C:\hlocal\workspace\P1\ld_script.ld" -nostartfiles -Wl,-Map,P1.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "P1.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -T"C:\hlocal\workspace\EC\P1/ld_script.ld" -nostartfiles -L"C:\hlocal\workspace\EC\P1" -Wl,-Map,Prueba.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "Prueba.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-P1.hex: P1.elf
+Prueba.hex: Prueba.elf
 	@echo 'Invoking: ARM Sourcery Windows GNU Create Flash Image'
-	arm-none-eabi-objcopy -O binary P1.elf  "P1.hex"
+	arm-none-eabi-objcopy -O binary Prueba.elf  "Prueba.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-P1.lst: P1.elf
+Prueba.lst: Prueba.elf
 	@echo 'Invoking: ARM Sourcery Windows GNU Create Listing'
-	arm-none-eabi-objdump -h -S P1.elf > "P1.lst"
+	arm-none-eabi-objdump -h -S Prueba.elf > "Prueba.lst"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-P1.siz: P1.elf
+Prueba.siz: Prueba.elf
 	@echo 'Invoking: ARM Sourcery Windows GNU Print Size'
-	arm-none-eabi-size  --format=berkeley P1.elf
+	arm-none-eabi-size  --format=berkeley Prueba.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SECONDARY_SIZE)$(OBJS)$(C_DEPS)$(ASM_DEPS)$(SECONDARY_FLASH)$(EXECUTABLES)$(SECONDARY_LIST)$(S_UPPER_DEPS) P1.elf
+	-$(RM) $(SECONDARY_SIZE)$(OBJS)$(C_DEPS)$(ASM_DEPS)$(SECONDARY_FLASH)$(EXECUTABLES)$(SECONDARY_LIST)$(S_UPPER_DEPS) Prueba.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_LIST) $(SECONDARY_SIZE)

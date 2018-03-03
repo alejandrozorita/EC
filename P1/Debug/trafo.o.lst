@@ -1,0 +1,246 @@
+   1              		.cpu arm7tdmi
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 18, 4
+  11              		.file	"trafo.c"
+  21              	.Ltext0:
+  22              		.file 1 "../trafo.c"
+ 989              		.align	2
+ 990              		.global	rgb2gray
+ 992              	rgb2gray:
+ 993              	.LFB0:
+   1:../trafo.c    **** /*-----------------------------------------------------------------
+   2:../trafo.c    **** **
+   3:../trafo.c    **** **  Fichero:
+   4:../trafo.c    **** **    trafo.h  10/6/2014
+   5:../trafo.c    **** **
+   6:../trafo.c    **** **    Estructura de Computadores
+   7:../trafo.c    **** **    Dpto. de Arquitectura de Computadores y Autom�tica
+   8:../trafo.c    **** **    Facultad de Inform�tica. Universidad Complutense de Madrid
+   9:../trafo.c    **** **
+  10:../trafo.c    **** **  Prop�sito:
+  11:../trafo.c    **** **    Contiene las implementaciones de las funciones en C
+  12:../trafo.c    **** **    usadas por el programa principal
+  13:../trafo.c    **** **
+  14:../trafo.c    **** **  Notas de dise�o:
+  15:../trafo.c    **** **
+  16:../trafo.c    **** **---------------------------------------------------------------*/
+  17:../trafo.c    **** 
+  18:../trafo.c    **** #include "trafo.h"
+  19:../trafo.c    **** #include "types.h"
+  20:../trafo.c    **** #include "imgarm.h"
+  21:../trafo.c    **** 
+  22:../trafo.c    **** // COMPLETAR LAS FUNCIONES MARCADAS
+  23:../trafo.c    **** 
+  24:../trafo.c    **** unsigned char rgb2gray(pixelRGB* pixel)
+  25:../trafo.c    **** {
+ 994              		.loc 1 25 0
+ 995              		.cfi_startproc
+ 996              		@ Function supports interworking.
+ 997              		@ args = 0, pretend = 0, frame = 8
+ 998              		@ frame_needed = 1, uses_anonymous_args = 0
+ 999 0000 0DC0A0E1 		mov	ip, sp
+ 1000              	.LCFI0:
+ 1001              		.cfi_def_cfa_register 12
+ 1002 0004 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 1003 0008 04B04CE2 		sub	fp, ip, #4
+ 1004              		.cfi_offset 14, -8
+ 1005              		.cfi_offset 13, -12
+ 1006              		.cfi_offset 11, -16
+ 1007              	.LCFI1:
+ 1008              		.cfi_def_cfa 11, 4
+ 1009 000c 08D04DE2 		sub	sp, sp, #8
+ 1010 0010 10000BE5 		str	r0, [fp, #-16]
+  26:../trafo.c    **** 	// COMPLETAR
+  27:../trafo.c    **** }
+ 1011              		.loc 1 27 0
+ 1012 0014 0300A0E1 		mov	r0, r3
+ 1013 0018 0CD04BE2 		sub	sp, fp, #12
+ 1014 001c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 1015 0020 1EFF2FE1 		bx	lr
+ 1016              		.cfi_endproc
+ 1017              	.LFE0:
+ 1019              		.align	2
+ 1020              		.global	RGB2GrayMatrix
+ 1022              	RGB2GrayMatrix:
+ 1023              	.LFB1:
+  28:../trafo.c    **** 
+  29:../trafo.c    **** void RGB2GrayMatrix(pixelRGB orig[], unsigned char dest[], int nfilas, int ncols) {
+ 1024              		.loc 1 29 0
+ 1025              		.cfi_startproc
+ 1026              		@ Function supports interworking.
+ 1027              		@ args = 0, pretend = 0, frame = 24
+ 1028              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1029 0024 0DC0A0E1 		mov	ip, sp
+ 1030              	.LCFI2:
+ 1031              		.cfi_def_cfa_register 12
+ 1032 0028 10D82DE9 		stmfd	sp!, {r4, fp, ip, lr, pc}
+ 1033 002c 04B04CE2 		sub	fp, ip, #4
+ 1034              		.cfi_offset 14, -8
+ 1035              		.cfi_offset 13, -12
+ 1036              		.cfi_offset 11, -16
+ 1037              		.cfi_offset 4, -20
+ 1038              	.LCFI3:
+ 1039              		.cfi_def_cfa 11, 4
+ 1040 0030 1CD04DE2 		sub	sp, sp, #28
+ 1041 0034 20000BE5 		str	r0, [fp, #-32]
+ 1042 0038 24100BE5 		str	r1, [fp, #-36]
+ 1043 003c 28200BE5 		str	r2, [fp, #-40]
+ 1044 0040 2C300BE5 		str	r3, [fp, #-44]
+  30:../trafo.c    ****     int i,j;
+  31:../trafo.c    **** 
+  32:../trafo.c    ****     for (i=0;i<nfilas;i++)
+ 1045              		.loc 1 32 0
+ 1046 0044 0030A0E3 		mov	r3, #0
+ 1047 0048 18300BE5 		str	r3, [fp, #-24]
+ 1048 004c 220000EA 		b	.L3
+ 1049              	.L6:
+  33:../trafo.c    ****         for (j=0; j<ncols; j++)
+ 1050              		.loc 1 33 0
+ 1051 0050 0030A0E3 		mov	r3, #0
+ 1052 0054 1C300BE5 		str	r3, [fp, #-28]
+ 1053 0058 180000EA 		b	.L4
+ 1054              	.L5:
+  34:../trafo.c    ****             dest[i*ncols+j] =  rgb2gray(&orig[i*ncols+j]);
+ 1055              		.loc 1 34 0 discriminator 2
+ 1056 005c 18301BE5 		ldr	r3, [fp, #-24]
+ 1057 0060 2C201BE5 		ldr	r2, [fp, #-44]
+ 1058 0064 930202E0 		mul	r2, r3, r2
+ 1059 0068 1C301BE5 		ldr	r3, [fp, #-28]
+ 1060 006c 033082E0 		add	r3, r2, r3
+ 1061 0070 24201BE5 		ldr	r2, [fp, #-36]
+ 1062 0074 034082E0 		add	r4, r2, r3
+ 1063 0078 18301BE5 		ldr	r3, [fp, #-24]
+ 1064 007c 2C201BE5 		ldr	r2, [fp, #-44]
+ 1065 0080 930202E0 		mul	r2, r3, r2
+ 1066 0084 1C301BE5 		ldr	r3, [fp, #-28]
+ 1067 0088 033082E0 		add	r3, r2, r3
+ 1068 008c 0320A0E1 		mov	r2, r3
+ 1069 0090 0230A0E1 		mov	r3, r2
+ 1070 0094 8330A0E1 		mov	r3, r3, asl #1
+ 1071 0098 023083E0 		add	r3, r3, r2
+ 1072 009c 20201BE5 		ldr	r2, [fp, #-32]
+ 1073 00a0 033082E0 		add	r3, r2, r3
+ 1074 00a4 0300A0E1 		mov	r0, r3
+ 1075 00a8 FEFFFFEB 		bl	rgb2gray
+ 1076 00ac 0030A0E1 		mov	r3, r0
+ 1077 00b0 0030C4E5 		strb	r3, [r4, #0]
+  33:../trafo.c    ****         for (j=0; j<ncols; j++)
+ 1078              		.loc 1 33 0 discriminator 2
+ 1079 00b4 1C301BE5 		ldr	r3, [fp, #-28]
+ 1080 00b8 013083E2 		add	r3, r3, #1
+ 1081 00bc 1C300BE5 		str	r3, [fp, #-28]
+ 1082              	.L4:
+  33:../trafo.c    ****         for (j=0; j<ncols; j++)
+ 1083              		.loc 1 33 0 is_stmt 0 discriminator 1
+ 1084 00c0 1C201BE5 		ldr	r2, [fp, #-28]
+ 1085 00c4 2C301BE5 		ldr	r3, [fp, #-44]
+ 1086 00c8 030052E1 		cmp	r2, r3
+ 1087 00cc E2FFFFBA 		blt	.L5
+  32:../trafo.c    ****     for (i=0;i<nfilas;i++)
+ 1088              		.loc 1 32 0 is_stmt 1
+ 1089 00d0 18301BE5 		ldr	r3, [fp, #-24]
+ 1090 00d4 013083E2 		add	r3, r3, #1
+ 1091 00d8 18300BE5 		str	r3, [fp, #-24]
+ 1092              	.L3:
+  32:../trafo.c    ****     for (i=0;i<nfilas;i++)
+ 1093              		.loc 1 32 0 is_stmt 0 discriminator 1
+ 1094 00dc 18201BE5 		ldr	r2, [fp, #-24]
+ 1095 00e0 28301BE5 		ldr	r3, [fp, #-40]
+ 1096 00e4 030052E1 		cmp	r2, r3
+ 1097 00e8 D8FFFFBA 		blt	.L6
+  35:../trafo.c    **** 
+  36:../trafo.c    **** }
+ 1098              		.loc 1 36 0 is_stmt 1
+ 1099 00ec 10D04BE2 		sub	sp, fp, #16
+ 1100 00f0 10689DE8 		ldmfd	sp, {r4, fp, sp, lr}
+ 1101 00f4 1EFF2FE1 		bx	lr
+ 1102              		.cfi_endproc
+ 1103              	.LFE1:
+ 1105              		.align	2
+ 1106              		.global	apply_gaussian
+ 1108              	apply_gaussian:
+ 1109              	.LFB2:
+  37:../trafo.c    **** 
+  38:../trafo.c    **** void apply_gaussian(unsigned char im1[], unsigned char im2[], int width, int height)
+  39:../trafo.c    **** {
+ 1110              		.loc 1 39 0
+ 1111              		.cfi_startproc
+ 1112              		@ Function supports interworking.
+ 1113              		@ args = 0, pretend = 0, frame = 16
+ 1114              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1115 00f8 0DC0A0E1 		mov	ip, sp
+ 1116              	.LCFI4:
+ 1117              		.cfi_def_cfa_register 12
+ 1118 00fc 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 1119 0100 04B04CE2 		sub	fp, ip, #4
+ 1120              		.cfi_offset 14, -8
+ 1121              		.cfi_offset 13, -12
+ 1122              		.cfi_offset 11, -16
+ 1123              	.LCFI5:
+ 1124              		.cfi_def_cfa 11, 4
+ 1125 0104 10D04DE2 		sub	sp, sp, #16
+ 1126 0108 10000BE5 		str	r0, [fp, #-16]
+ 1127 010c 14100BE5 		str	r1, [fp, #-20]
+ 1128 0110 18200BE5 		str	r2, [fp, #-24]
+ 1129 0114 1C300BE5 		str	r3, [fp, #-28]
+  40:../trafo.c    **** 	// COMPLETAR
+  41:../trafo.c    **** }
+ 1130              		.loc 1 41 0
+ 1131 0118 0CD04BE2 		sub	sp, fp, #12
+ 1132 011c 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 1133 0120 1EFF2FE1 		bx	lr
+ 1134              		.cfi_endproc
+ 1135              	.LFE2:
+ 1137              		.align	2
+ 1138              		.global	apply_sobel
+ 1140              	apply_sobel:
+ 1141              	.LFB3:
+  42:../trafo.c    **** 
+  43:../trafo.c    **** void apply_sobel(unsigned char im1[], unsigned char im2[], int width, int height)
+  44:../trafo.c    **** {
+ 1142              		.loc 1 44 0
+ 1143              		.cfi_startproc
+ 1144              		@ Function supports interworking.
+ 1145              		@ args = 0, pretend = 0, frame = 16
+ 1146              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1147 0124 0DC0A0E1 		mov	ip, sp
+ 1148              	.LCFI6:
+ 1149              		.cfi_def_cfa_register 12
+ 1150 0128 00D82DE9 		stmfd	sp!, {fp, ip, lr, pc}
+ 1151 012c 04B04CE2 		sub	fp, ip, #4
+ 1152              		.cfi_offset 14, -8
+ 1153              		.cfi_offset 13, -12
+ 1154              		.cfi_offset 11, -16
+ 1155              	.LCFI7:
+ 1156              		.cfi_def_cfa 11, 4
+ 1157 0130 10D04DE2 		sub	sp, sp, #16
+ 1158 0134 10000BE5 		str	r0, [fp, #-16]
+ 1159 0138 14100BE5 		str	r1, [fp, #-20]
+ 1160 013c 18200BE5 		str	r2, [fp, #-24]
+ 1161 0140 1C300BE5 		str	r3, [fp, #-28]
+  45:../trafo.c    **** 	// COMPLETAR
+  46:../trafo.c    **** }
+ 1162              		.loc 1 46 0
+ 1163 0144 0CD04BE2 		sub	sp, fp, #12
+ 1164 0148 00689DE8 		ldmfd	sp, {fp, sp, lr}
+ 1165 014c 1EFF2FE1 		bx	lr
+ 1166              		.cfi_endproc
+ 1167              	.LFE3:
+ 1169              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 trafo.c
+C:\Users\Alex\AppData\Local\Temp\cc13sLIa.s:989    .text:00000000 $a
+C:\Users\Alex\AppData\Local\Temp\cc13sLIa.s:992    .text:00000000 rgb2gray
+C:\Users\Alex\AppData\Local\Temp\cc13sLIa.s:1022   .text:00000024 RGB2GrayMatrix
+C:\Users\Alex\AppData\Local\Temp\cc13sLIa.s:1108   .text:000000f8 apply_gaussian
+C:\Users\Alex\AppData\Local\Temp\cc13sLIa.s:1140   .text:00000124 apply_sobel
+                     .debug_frame:00000010 $d
+
+NO UNDEFINED SYMBOLS

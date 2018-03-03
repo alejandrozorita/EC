@@ -1,0 +1,6 @@
+10:07:40 **** Build of configuration Default for project Prueba ****
+cs-make all 
+Cannot run program "cs-make": Launching failed
+
+Error: Program "cs-make" not found in PATH
+PATH=[C:/Program Files/eclipse/jre/bin/client;C:/Program Files/eclipse/jre/bin;C:/Program Files/eclipse/jre/lib/i386;;;C:\Program Files\eclipse;]
